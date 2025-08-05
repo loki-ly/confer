@@ -29,3 +29,4 @@ Route::middleware([
 Route:: get('/home',[AdminController:: class, 'index' ])-> name('home');
 Route:: get('/home',[SpeakerController:: class, 'index' ])-> name('home');
 Route:: get('/home',[ResearcherController:: class, 'index' ])-> name('home');
+Route:: post('my_upload',[ResearcherController:: class, 'upload']);

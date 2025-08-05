@@ -16,6 +16,39 @@
             Your Papers
         </h1>
     </x-slot>
+    <div>
+        <form action="{{url('my_upload')}}" method="post" enctype="multipart/form-data">
+            @csrf
+            <div>
+                <label> Title :</label>
+                <input type="text" name="title">
+            </div>
+            <br>
+
+            <div>
+                <label> Description :</label>
+                <input type="text" name="description">
+            </div>
+            <br>
+            <div>
+                <label> Price :
+                <input type="text" name="price">
+                $ </label>
+            </div>
+            <br>
+            <div>
+                <label> File Upload :</label>
+                <input type="file" name="file">
+            </div>
+            <br>
+            
+
+            <div>
+                <input type= "submit" value = "Upload">
+            </div>
+            <br>
+        </form>
+    </div>
 
     <!-- <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
