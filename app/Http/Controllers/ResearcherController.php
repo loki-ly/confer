@@ -17,9 +17,9 @@ class ResearcherController extends Controller
             if ($usertype == 'user'){
                 return view('dashboard');
             }
-            // else if ($usertype == 'admin'){
-            //     return view('admin.index');
-            // }
+            else if ($usertype == 'admin'){
+                return view('admin.index');
+            }
             else if ($usertype == 'researcher'){
                 return view('researcher.index');
 
@@ -27,9 +27,9 @@ class ResearcherController extends Controller
             // else if ($usertype == 'researcher'){
             //     return view('speaker.index');
             // }
-            // else if ($usertype == 'speaker'){
-            //     return view('speaker.index');
-            // }
+            else if ($usertype == 'speaker'){
+                return view('speaker.index');
+            }
             else{
                 return redirect() -> back();
             }

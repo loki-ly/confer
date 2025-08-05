@@ -22,7 +22,7 @@
 
             <div>
                 <x-label for="usertype" value="{{ __('Role') }}" />
-                <x-input id="usertype" class="block mt-1 w-full" type="text" name="usertype" :value="old('usertype')" required autofocus autocomplete="usertype" />
+                <x-input id="usertype" class="block mt-1 w-full" type="text" name="usertype" :value="old('usertype')" />
             </div>
 
             <div>
