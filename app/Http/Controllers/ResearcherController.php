@@ -19,7 +19,11 @@ class ResearcherController extends Controller
             // }
             else if ($usertype == 'researcher'){
                 return view('researcher.index');
+
             }
+            // else if ($usertype == 'researcher'){
+            //     return view('speaker.index');
+            // }
             // else if ($usertype == 'speaker'){
             //     return view('speaker.index');
             // }
