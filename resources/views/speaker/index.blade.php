@@ -16,6 +16,9 @@
             Your Speeches
         </h1>
     </x-slot>
+    <div>
+        <a href="{{url('display_data')}}">Display paper</a>
+    </div>
 
     <!-- <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Users;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Paper;
 
 class AdminController extends Controller
 {
@@ -27,5 +28,10 @@ class AdminController extends Controller
                 return redirect() -> back();
             }
         }
+    }
+    public function display(){
+        $data = Paper:: all();
+
+        return view('display_paper',compact('data'));
     }
 }
