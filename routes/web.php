@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ResearcherController;
+use App\Http\Controllers\SpeakerController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,6 +23,9 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('dashboard');   
     })->name('dashboard');
 });
+Route:: get('/home',[AdminController:: class, 'index' ])-> name('home');
+Route:: get('/home',[SpeakerController:: class, 'index' ])-> name('home');
+Route:: get('/home',[ResearcherController:: class, 'index' ])-> name('home');
