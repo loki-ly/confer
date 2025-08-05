@@ -30,3 +30,8 @@ Route:: get('/home',[AdminController:: class, 'index' ])->name('home');
 Route:: get('/home',[SpeakerController:: class, 'index' ])->name('home');
 Route:: get('/home',[ResearcherController:: class, 'index' ])->name('home');
 Route:: post('my_upload',[ResearcherController:: class, 'upload']);
+Route:: get('display_data',[ResearcherController:: class, 'display']);
+Route:: get('my_download/{file}',[ResearcherController:: class, 'download']);
+Route:: get('view_file/{file}',[ResearcherController:: class, 'view']);
+
+

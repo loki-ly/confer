@@ -7,6 +7,7 @@ use App\Models\Users;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Paper;
 use App\Models\Product;
+use Illuminate\Support\Facades\Storage;
 
 class ResearcherController extends Controller
 {
@@ -51,5 +52,19 @@ class ResearcherController extends Controller
         $data->save();
 
         return redirect()->back();
+    }
+    public function display(){
+        $data = Paper:: all();
+
+        return view('display_paper',compact('data'));
+    }
+    public function download($file){
+        return response()->download(public_path('my_files/'.$file));
+
+    }
+    public function view($file){
+        $my_file = $file;
+        return view('view_file',compact('my_file'));
+
     }
 }
