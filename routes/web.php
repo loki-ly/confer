@@ -6,9 +6,11 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ResearcherController;
 use App\Http\Controllers\SpeakerController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('home.index');
+// });
+Route:: get('/',[AdminController:: class, 'home' ]);
+
 Route::get('/product',[ProductController::class , 'index'])-> name('product.index');
 Route::get('/product/create',[ ProductController ::class , 'create'])-> name('product.create');
 Route::post('/product',[ ProductController ::class , 'store'])-> name('product.store');

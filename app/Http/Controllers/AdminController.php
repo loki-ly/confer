@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Users;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Paper;
+use PhpParser\Node\Expr\FuncCall;
 
 class AdminController extends Controller
 {
@@ -13,7 +14,7 @@ class AdminController extends Controller
         if(Auth:: id()){
             $usertype = Auth()-> user() -> usertype;
             if ($usertype == 'user'){
-                return view('dashboard');
+                return view('home.index');
             }
             else if ($usertype == 'admin'){
                 return view('admin.index');
@@ -33,5 +34,8 @@ class AdminController extends Controller
         $data = Paper:: all();
 
         return view('display_paper',compact('data'));
+    }
+    public function home(){
+        return view('home.index');
     }
 }
