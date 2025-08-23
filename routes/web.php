@@ -37,3 +37,5 @@ Route:: get('my_download/{file}',[ResearcherController:: class, 'download']);
 Route:: get('view_file/{file}',[ResearcherController:: class, 'view']);
 
 
+Route:: get('/create_room',[AdminController:: class, 'create_room' ]);
+Route:: post('/add_room',[AdminController:: class, 'add_room' ]);
