@@ -75,6 +75,12 @@ class AdminController extends Controller
         // return view('');
 
      }
+     public function room_delete($id){
+        
+        $data = Room:: find($id);
+        $data->delete();
+        return redirect() -> back();
+     }
 
      
 }

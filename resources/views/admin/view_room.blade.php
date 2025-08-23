@@ -42,6 +42,7 @@
                 <th class = "th_deg">Room type</th>
                 <th class = "th_deg">Seat</th>
                 <th class = "th_deg">Image</th>
+                <th class = "th_deg">Delete</th>
                 
                 
             </tr>
@@ -57,11 +58,9 @@
             <td>
                 <img width="100" src="room/{{$data-> image}}" alt="">
             </td>
-                <!-- <td>aposidfj</td>
-                
-                <td>aposidfj</td>
-                <td>aposidfj</td>
-                <td>aposidfj</td> -->
+                <td>
+                    <a class="btn btn-danger" href="{{url('room_delete',$data->id)}}"> Delete</a>
+                </td>
             </tr>
             @endforeach
           </table>
