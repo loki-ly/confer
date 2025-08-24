@@ -43,6 +43,7 @@
                 <th class = "th_deg">Seat</th>
                 <th class = "th_deg">Image</th>
                 <th class = "th_deg">Delete</th>
+                <th class = "th_deg">Update</th>
                 
                 
             </tr>
@@ -52,7 +53,7 @@
                 <td>{{$data-> room_title}}</td>
             <td>{{$data-> description}}</td>
             <td>{{$data-> price}}</td>
-            <td>{{$data-> ac}}</td>
+            <td>{{$data-> AC}}</td>
             <td>{{$data-> room_type}}</td>
             <td>{{$data-> seat}}</td>
             <td>
@@ -61,6 +62,11 @@
                 <td>
                     <a class="btn btn-danger" href="{{url('room_delete',$data->id)}}"> Delete</a>
                 </td>
+
+                 <td>
+                    <a class="btn btn-warning" href="{{url('room_update',$data->id)}}"> Update</a>
+                </td>
+
             </tr>
             @endforeach
           </table>

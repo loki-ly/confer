@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Paper;
 use App\Models\Product;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Room;
 
 class ResearcherController extends Controller
 {
@@ -16,7 +17,8 @@ class ResearcherController extends Controller
             $usertype = Auth()-> user() -> usertype;
             // $userid = Auth()-> user() -> userid;
             if ($usertype == 'user'){
-                return view('home.index');
+                $room = Room:: all();
+                return view('home.index',compact('room'));
             }
             else if ($usertype == 'admin'){
                 return view('admin.index');

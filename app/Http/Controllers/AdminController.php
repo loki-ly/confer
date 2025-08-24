@@ -15,7 +15,8 @@ class AdminController extends Controller
         if(Auth:: id()){
             $usertype = Auth()-> user() -> usertype;
             if ($usertype == 'user'){
-                return view('home.index');
+                $room = Room:: all();
+                return view('home.index',compact('room'));
             }
             else if ($usertype == 'admin'){
                 return view('admin.index');
@@ -37,7 +38,9 @@ class AdminController extends Controller
         return view('display_data',compact('data'));
     }
     public function home(){
-        return view('home.index');
+        $room = Room:: all();
+        return view('home.index',compact('room'));
+        // return view('home.index');
     }
 
 
@@ -80,6 +83,36 @@ class AdminController extends Controller
         $data = Room:: find($id);
         $data->delete();
         return redirect() -> back();
+     }
+     public function room_update($id){
+        $data = Room:: find($id);
+        return view('admin.update_room',compact('data'));
+        
+        
+        // $data->delete();
+        // return redirect() -> back();
+     }
+      public function edit_room( Request $request, $id){
+        $data = Room:: find($id);
+        $data-> room_title = $request->title;
+        $data-> description = $request->description;
+        $data-> price = $request->price;
+        $data-> seat = $request->seat;
+        $data-> ac = $request->ac;
+        $data-> room_type = $request->type;
+
+        $image = $request->image;
+        if ($image)
+        {
+            $imagename= time().'.'.$image->getClientOriginalExtension()  ;
+            $request->image -> move('room',$imagename);
+            $data-> image = $imagename;
+        }
+        $data->save();
+        
+
+        return redirect() -> back();
+
      }
 
      
