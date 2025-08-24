@@ -56,7 +56,7 @@ class ResearcherController extends Controller
     public function display(){
         $data = Paper:: all();
 
-        return view('display_paper',compact('data'));
+        return view('display_data',compact('data'));
     }
     public function download($file){
         return response()->download(public_path('my_files/'.$file));

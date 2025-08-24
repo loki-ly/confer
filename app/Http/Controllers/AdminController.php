@@ -34,7 +34,7 @@ class AdminController extends Controller
     public function display(){
         $data = Paper:: all();
 
-        return view('display_paper',compact('data'));
+        return view('display_data',compact('data'));
     }
     public function home(){
         return view('home.index');

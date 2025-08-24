@@ -32,6 +32,6 @@ class SpeakerController extends Controller
     public function display(){
         $data = Paper:: all();
 
-        return view('display_paper',compact('data'));
+        return view('display_data',compact('data'));
     }
 }

@@ -33,8 +33,10 @@
             </td>
 
         </tr>
+        
         @endforeach
     </table>
+    
     
     
 </body>
