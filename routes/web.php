@@ -51,5 +51,7 @@ Route:: get('/room_details/{id}',[HomeController:: class, 'room_details' ]);
 Route:: post('/add_booking/{id}',[HomeController:: class, 'add_booking' ]);
 Route:: get('/bookings',[AdminController:: class, 'bookings' ]);
 // Route:: get('/booking_delete/{id}',[HomeController:: class, 'booking_delete'
-
+// Route:: post('/contact}',[HomeController:: class, 'contact' ]);
+Route::post('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/all_messages', [AdminController::class, 'all_messages']);
 

@@ -1,11 +1,36 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-</head>
-<body>
+<html>
+  <head> 
+    @include('products.css')
+    <style>
+        table,th,td
+        {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+            text-align: center;
+        }
+        th
+        {
+            background-color: skyblue;
+        }   
+    </style>
+  </head>
+  <body>
+   @include('products.header') 
+
+      @include('products.sidebar')
+      <!-- Sidebar Navigation end-->
+         <!-- @include('products.body') -->
+            <div class="page-content">
+        <div class="page-header">
+          <div class="container-fluid">
+           
+          
+ 
+
     <h1> Paper details</h1>
     <table border="1px solit black ">
         <tr>
@@ -37,8 +62,13 @@
         @endforeach
     </table>
     
+    </div>
+        </div>
+      </div>
     
-    
-</body>
+
 </html>
 
+       @include('products.footer')
+  </body>
+</html>

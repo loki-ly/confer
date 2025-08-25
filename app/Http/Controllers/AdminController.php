@@ -9,6 +9,7 @@ use App\Models\Paper;
 use PhpParser\Node\Expr\FuncCall;
 use App\Models\Room;
 use App\Models\Booking;
+use App\Models\Contact;
 
 class AdminController extends Controller
 {
@@ -119,6 +120,20 @@ class AdminController extends Controller
         $data = Booking:: all();
         return view('admin.booking',compact('data'));
      }
+    //  public function all_messages(Request $request){
+    //     $contact= new Contact;
+    //     $contact->name=$request->name;
+    //     $contact->email=$request->email;
+    //     $contact->phone=$request->phone;
+    //     $contact->message=$request->message;
 
+    //     $contact->save();
+    //     return redirect()->back()->with('message','Message Sent Successfully. We will contact you soon');
+    //  }
+        public function all_messages(){
+            $data = Contact:: all();
+            return view('admin.all_message',compact('data'));
+        }
+    
      
 }

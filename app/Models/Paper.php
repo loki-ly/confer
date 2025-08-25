@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Paper extends Model
 {
-    // use HasFactory;
+    use HasFactory;
     protected $fillable = [
         'title',
         'description',
