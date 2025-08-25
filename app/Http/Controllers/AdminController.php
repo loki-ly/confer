@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Paper;
 use PhpParser\Node\Expr\FuncCall;
 use App\Models\Room;
+use App\Models\Booking;
 
 class AdminController extends Controller
 {
@@ -113,6 +114,10 @@ class AdminController extends Controller
 
         return redirect() -> back();
 
+     }
+     public function bookings(){
+        $data = Booking:: all();
+        return view('admin.booking',compact('data'));
      }
 
      

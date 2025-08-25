@@ -52,14 +52,19 @@
                   </div>
                </div>
 
-               <div class="col-md-6">
-                <div>
+               <div class="col-md-4">
+                  <h1 style="font-size: 40px!important;"> Book Conference</h1>
+                  <form action="{{url('add_booking',$room->id)}}" method = "POST">
+                    @csrf
+                
+                
+                  <div>
                     <label for="">Name</label>
                     <input style="color: black;" type="text" placeholder="Enter your name" name = "name">
                 </div>
 
                 <div>
-                    <label for="">Email</label>
+                    <label for="">Email </label>
                     <input  type="email"  name = "email">
                 </div>
 
@@ -67,6 +72,7 @@
                     <label for="">Phone</label>
                     <input  type="number"  name = "phone">
                 </div>
+                <div></div>
 
                 <!-- <div>
                     <label for="">Start Date</label>
@@ -78,10 +84,12 @@
                     <input  type="date"  name = "endDate" id = "endDate">
                 </div> -->
 
-                <div>
+                <div style="padding-top: 20px;">
                    
                     <input  type="submit" class="btn btn-primary" value="Book Room">
                 </div>
+
+                  </form>
 
                </div>
               
