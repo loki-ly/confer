@@ -9,6 +9,9 @@ use App\Models\Paper;
 use App\Models\Product;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Room;
+use App\Models\Booking;
+use App\Models\Contact;
+use App\Models\Discuss;
 
 class ResearcherController extends Controller
 {
@@ -66,7 +69,31 @@ class ResearcherController extends Controller
     }
     public function view($file){
         $my_file = $file;
-        return view('view_file',compact('my_file'));
+        return view('products.view_file',compact('my_file'));
 
+    }
+    public function discuss_paper(Request $request, $id){
+        $paperid = $id;
+        $data = new Discuss();
+        $data->name=$request->name;
+        $data->email=$request->email;
+        $data->paper_id = $paperid;
+        $data-> userid = Auth::id();// userid
+        $data-> comment = $request->comment;
+        //  
+        // $data->message=$request->message;
+        // $data-> title = $request->title;
+        // $data-> description = $request->description;
+        // $data-> userid = Auth::id();// userid
+        // $data-> price = $request->price;
+        $data->save();
+        return redirect()->back()->with('message','Comment Added Successfully');
+        
+    }
+    public function comment($id){
+        // $data = Discuss:: all();
+        return view('products.comment',compact('id'));
+
+        // return view('products.comment',compact('data'));
     }
 }

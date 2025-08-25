@@ -54,8 +54,15 @@
                 <a href="{{url('my_download',$data-> file)}}">Download</a>
             </td>
             <td>
-                <a href="{{url('view_file',$data-> file)}}">View</a>
+                <a href="{{url('view_file',[$data-> file,$data->id])}}">View</a>
             </td>
+
+            <td>
+                <a href="{{url('comment',$data-> id)}}">comment</a>
+            </td>
+            <!-- <td>
+                <a href="{{url('view_file',$data-> id)}}">comment</a>
+            </td> -->
 
         </tr>
         

@@ -21,13 +21,33 @@
                     
                   </ul>
                 </li>
-                <li >
-                  <a href="{{url('bookings')}}"> <i class="icon-home"></i>Bookings </a>
-                </li>
+                <!-- <li >
+                  <a href="{{url('discuss_paper')}}"> <i class="icon-home"></i>Discuss Paper </a>
+                </li> -->
 
-                <li >
+                <!-- <li >
                   <a href="{{url('all_messages')}}"> <i class="icon-home"></i>Messages </a>
-                </li>
+                </li> -->
+                <!-- <div class="col-md-6">
+                  <form id="request" class="main_form" action="{{url('discuss_paper')}}" method="Post">
+                  @csrf
+                     <div class="row">
+                        <div class="col-md-12 ">
+                           <input class="contactus" placeholder="Name" type="type" name="name"> 
+                        </div>
+                        <div class="col-md-12">
+                           <input class="contactus" placeholder="Email" type="email" name="email"> 
+                        </div>
+                        
+                        <div class="col-md-12">
+                           <textarea class="textarea" placeholder="Message" type="type" name = "message"></textarea>
+                        </div>
+                        <div class="col-md-12">
+                           <button type="submit" class="btn btn-danger">Send</button>
+                        </div>
+                     </div>
+                  </form>
+               </div> -->
                 
         </ul>
         

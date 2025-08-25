@@ -35,7 +35,7 @@ Route:: get('/home',[ResearcherController:: class, 'index' ])->name('home');
 Route:: post('my_upload',[ResearcherController:: class, 'upload']);
 Route:: get('display_data',[ResearcherController:: class, 'display']);
 Route:: get('my_download/{file}',[ResearcherController:: class, 'download']);
-Route:: get('view_file/{file}',[ResearcherController:: class, 'view']);
+Route:: get('view_file/{file}/{id}',[ResearcherController:: class, 'view']);
 
 
 Route:: get('/create_room',[AdminController:: class, 'create_room' ]);
@@ -55,3 +55,13 @@ Route:: get('/bookings',[AdminController:: class, 'bookings' ]);
 Route::post('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/all_messages', [AdminController::class, 'all_messages']);
 
+Route::post('/discuss_paper/{id}', [ResearcherController::class, 'discuss_paper'])->name('discuss_paper');
+// Route::get('/discuss_paper', [AdminController::class, 'discuss_paper']);
+// Route::get('/discuss_paper', [ResearcherController::class, 'discuss_paper']);
+// Route::get('/discuss_paper', [SpeakerController::class, 'discuss_paper']);
+// Route::post('/discuss_paper', [HomeController::class, 'discuss_paper'])->name('discuss_paper');
+// Route::get('/all_discussions', [AdminController::class, 'all_discussions']);
+// Route::get('/all_discussions', [ResearcherController::class, 'all_discussions']);
+// Route::get('/all_discussions', [SpeakerController::class, 'all_discussions']);
+// Route::get('/all_discussions', [HomeController::class, 'all_discussions']);
+Route::get('/comment/{id}', [ResearcherController::class, 'comment']);
