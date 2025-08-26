@@ -80,6 +80,8 @@ class ResearcherController extends Controller
         $data->paper_id = $paperid;
         $data-> userid = Auth::id();// userid
         $data-> comment = $request->comment;
+
+        
         //  
         // $data->message=$request->message;
         // $data-> title = $request->title;
@@ -87,7 +89,10 @@ class ResearcherController extends Controller
         // $data-> userid = Auth::id();// userid
         // $data-> price = $request->price;
         $data->save();
-        return redirect()->back()->with('message','Comment Added Successfully');
+
+        $data2 = Discuss:: all();
+        // return redirect()->back()->with('message','Comment Added Successfully');
+        return view('products.all_discussions',compact(['data2','paperid']));
         
     }
     public function comment($id){
@@ -96,4 +101,9 @@ class ResearcherController extends Controller
 
         // return view('products.comment',compact('data'));
     }
+    public function all_discussions($id){
+            $paperid = $id;
+            $data2 = Discuss:: all();
+            return view('products.all_discussions',compact(['data2','paperid']));
+        }
 }

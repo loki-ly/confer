@@ -61,7 +61,7 @@ Route::post('/discuss_paper/{id}', [ResearcherController::class, 'discuss_paper'
 // Route::get('/discuss_paper', [SpeakerController::class, 'discuss_paper']);
 // Route::post('/discuss_paper', [HomeController::class, 'discuss_paper'])->name('discuss_paper');
 // Route::get('/all_discussions', [AdminController::class, 'all_discussions']);
-// Route::get('/all_discussions', [ResearcherController::class, 'all_discussions']);
+Route::get('/all_discussions/{id}', [ResearcherController::class, 'all_discussions']);
 // Route::get('/all_discussions', [SpeakerController::class, 'all_discussions']);
 // Route::get('/all_discussions', [HomeController::class, 'all_discussions']);
 Route::get('/comment/{id}', [ResearcherController::class, 'comment']);

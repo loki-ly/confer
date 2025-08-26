@@ -3,7 +3,9 @@
 <!DOCTYPE html>
 <html>
   <head> 
+    <base href="/public">
     @include('products.css')
+    
     <style>
         table,th,td
         {
@@ -33,38 +35,39 @@
 
     <h1> Paper details</h1>
     <table border="1px solit black ">
+       
+        
         <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>File</th>
-            <th>Price</th>
-            <th>Download</th>
-            <th>View</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>comment</th>
+            <!-- <th>data paper id</th>
+            <th>required paper id</th> -->
+            
 
 
 
         </tr>
-        @foreach($data as $data)
-        <tr>
-            <td>{{$data-> title}}</td>
-            <td>{{$data-> description}}</td>
-            <td>{{$data-> file}}</td>
-            <td>{{$data-> price}}</td>
-            <td>
-                <a href="{{url('my_download',$data-> file)}}">Download</a>
-            </td>
-            <td>
-                <a href="{{url('view_file',[$data-> file,$data->id])}}">View</a>
-            </td>
+        @foreach($data2 as $data2)
+            @if($data2->paper_id == $paperid)
+        
+            
+                
+                <tr>
+                    <td>{{$data2-> name}}</td>
+                    <td>{{$data2-> email}}</td>
+                    <td>{{$data2-> comment}}</td>
+                    <!-- <td>{{$data2-> paper_id}}</td>
+                    <td>{{$paperid}}</td>
+                    <td>{{$data2->userid}}</td> -->
+                    
+                    
+                
+                    
 
-            <td>
-                <a href="{{url('comment',$data-> id)}}">comment</a>
-            </td>
-            <td>
-                <a href="{{url('all_discussions',$data-> id)}}">See Discussions</a>
-            </td>
-
-        </tr>
+                </tr>
+            @endif
+       
         
         @endforeach
     </table>
