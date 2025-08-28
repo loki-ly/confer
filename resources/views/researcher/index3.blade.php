@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
+      <base href="/public">
       @include('home.css')
    </head>
    <!-- body -->
@@ -12,18 +13,18 @@
       <!-- end loader -->
       <!-- header -->
       <header>
-         @include('home.header')
+         @include('researcher.header')
       </header>
       <!-- end header inner -->
       <!-- end header -->
       <!-- banner -->
-      @include('home.slider')
+      @include('researcher.slider')
       <!-- end banner -->
       <!-- about -->
-      @include('home.about')
+      @include('researcher.about')
       <!-- end about -->
       <!-- our_room -->
-       @include('home.room')
+       <!-- @include('home.room') -->
       <!-- end our_room -->
       <!-- gallery -->
       <!-- @include('home.gallery') -->
@@ -32,9 +33,9 @@
      
       <!-- end blog -->
       <!--  contact -->
-      @include('home.contact')
+      @include('researcher.contact')
       <!-- end contact -->
       <!--  footer -->
-      @include('home.footer')
+      @include('researcher.footer')
    </body>
 </html>
