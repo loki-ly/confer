@@ -20,11 +20,11 @@
           <div class="container-fluid">
 
             <div>
-                <h1 style="font-size: 30px" ; font-weight : bold> Add Rooms</h1>
+                <h1 style="font-size: 30px" ; font-weight : bold> Add Conferences</h1>
                 <form action="{{url('add_room')}}" method="Post" enctype="multipart/form-data">
                     @csrf 
                     <div class >
-                        <label for=""> Room Title</label>
+                        <label for=""> Conference Title</label>
                         <input type="text" name = "title">
                     </div>
                     <div>
@@ -43,7 +43,7 @@
                     </div>
 
                     <div>
-                        <label for=""> Room Type</label>
+                        <label for=""> Hall Type</label>
                         <select name="type" id="">
                             <option selected value="small" > Small</option>
                             <option value="medium" > Medium</option>
@@ -65,7 +65,14 @@
                     </div>
 
                     <div>
-                        <input class ="btn btn-primary" type="submit" value = "Add Room">
+                        <input class ="btn btn-primary" type="submit" value = "Add Conference">
+                    </div>
+                    <div>
+                        @if(session()->has('message'))
+                        <div class="alert alert-success">
+                            {{ session()->get('message') }}
+                        </div>
+                        @endif
                     </div>
 
 

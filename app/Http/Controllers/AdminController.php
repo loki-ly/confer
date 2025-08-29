@@ -70,7 +70,7 @@ class AdminController extends Controller
         $data->save();
         
 
-        return redirect() -> back();
+        return redirect() -> back() -> with('message','Conference Added Successfully');
 
      }
      public function view_room(){
@@ -84,11 +84,11 @@ class AdminController extends Controller
         
         $data = Room:: find($id);
         $data->delete();
-        return redirect() -> back();
+        return redirect() -> back() -> with('message','Conference Deleted Successfully');
      }
      public function room_update($id){
         $data = Room:: find($id);
-        return view('admin.update_room',compact('data'));
+        return view('admin.update_room',compact('data')) ;
         
         
         // $data->delete();
@@ -113,7 +113,7 @@ class AdminController extends Controller
         $data->save();
         
 
-        return redirect() -> back();
+        return redirect() -> back() -> with('message','Conference Updated Successfully');
 
      }
      public function bookings(){
