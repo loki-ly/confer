@@ -38,7 +38,7 @@
 
 <iframe style="height: 800px ; width :80%" src="/my_files/{{$my_file}}" frameborder="0"></iframe>
 
-    <div class="col-md-6">
+    <!-- <div class="col-md-6">
                   <form id="request" class="main_form" action="{{url('discuss_paper')}}" method="Post">
                   @csrf
                      <div class="row">
@@ -57,7 +57,7 @@
                         </div>
                      </div>
                   </form>
-               </div>
+               </div> -->
     </div>
         </div>
       </div>

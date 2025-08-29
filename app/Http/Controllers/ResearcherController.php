@@ -56,7 +56,7 @@ class ResearcherController extends Controller
         $data-> file = $filename;
         $data->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('message','Paper Uploaded Successfully');
     }
     public function display(){
         $data = Paper:: all();
@@ -92,18 +92,18 @@ class ResearcherController extends Controller
 
         $data2 = Discuss:: all();
         // return redirect()->back()->with('message','Comment Added Successfully');
-        return view('products.all_discussions',compact(['data2','paperid']));
+        return view('products.all_discussions',compact(['data2','paperid'])) ->with('message','Comment Added Successfully');
         
     }
     public function comment($id){
         // $data = Discuss:: all();
-        return view('products.comment',compact('id'));
+        return view('products.comment',compact('id')) ;
 
         // return view('products.comment',compact('data'));
     }
     public function all_discussions($id){
             $paperid = $id;
             $data2 = Discuss:: all();
-            return view('products.all_discussions',compact(['data2','paperid']));
+            return view('products.all_discussions',compact(['data2','paperid'])) ->with('message','Comment Added Successfully');
         }
 }

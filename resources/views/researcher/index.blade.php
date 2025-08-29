@@ -46,6 +46,13 @@
             <div>
                 <input type= "submit" value = "Upload">
             </div>
+            <div>
+                @if(session()->has('message'))
+                <div class="alert alert-success">
+                    {{ session()->get('message') }}
+                </div>
+                @endif
+            </div>
             <br>
         </form>
     </div>
